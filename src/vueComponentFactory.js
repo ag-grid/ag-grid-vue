@@ -149,15 +149,12 @@ export class VueComponentFactory {
     static createAndMountComponent(params, componentType) {
         let details = {
             // parent: that.parent,
-            methods: {
-                getParams() {
-                    return params;
-                }
+            data: {
+                params: Object.freeze(params)
             }
         };
 
         let component = new componentType(details);
-        component.params = params;
         component.$mount();
         return component;
     }

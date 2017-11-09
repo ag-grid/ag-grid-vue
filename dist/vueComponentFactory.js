@@ -214,15 +214,12 @@ var VueComponentFactory = exports.VueComponentFactory = function () {
         value: function createAndMountComponent(params, componentType) {
             var details = {
                 // parent: that.parent,
-                methods: {
-                    getParams: function getParams() {
-                        return params;
-                    }
+                data: {
+                    params: Object.freeze(params)
                 }
             };
 
             var component = new componentType(details);
-            component.params = params;
             component.$mount();
             return component;
         }
