@@ -150,7 +150,7 @@ export class VueComponentFactory {
         let details = {
             // parent: that.parent,
             data: {
-                params: params
+                params: Object.freeze(params)
             }
         };
 

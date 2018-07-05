@@ -215,7 +215,7 @@ var VueComponentFactory = exports.VueComponentFactory = function () {
             var details = {
                 // parent: that.parent,
                 data: {
-                    params: params
+                    params: Object.freeze(params)
                 }
             };
 
