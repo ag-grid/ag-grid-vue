@@ -199,6 +199,7 @@ var VueComponentFactory = exports.VueComponentFactory = function () {
         value: function getComponentType(parent, component) {
             if (typeof component === 'string') {
                 var componentInstance = parent.$parent.$options.components[component];
+                componentInstance.store = parent.$store;
                 if (!componentInstance) {
                     console.error("Could not find component with name of " + component + ". Is it in Vue.components?");
                     return null;
